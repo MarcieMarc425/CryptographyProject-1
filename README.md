@@ -1,6 +1,8 @@
 # CryptographyProject-1
 Project 1 for Cryptography class
 
+### Project Description
+
 This cryptanalysis project consists of a software implementation of an algorithm that tries to decrypt an L-symbol challenge ciphertext computed using a specific cipher. Informally speaking, the program's goal is to find the plaintext used to compute this ciphertext within a reasonable amount of time. Specifically, the program should print on screen something like "Enter the ciphertext:", obtain the ciphertext from stdin, apply some cryptanalysis strategy and output on screen something like "My plaintext guess is:" followed by the plaintext found by the strategy. 
 
 In doing that, the program is allowed access to:
@@ -59,3 +61,6 @@ In the first test, the program will be run many times, each time on a new cipher
 In the second test, the program will be run a few times, each time on a new ciphertext, computed using a plaintext obtained as a space-separate sequence of words that are randomly chosen from a subset of the set of all English words (specifically, a few words taken from the attachment english_words.txt at the top of this page, to be published soon) and the above encryption scheme, with a different scheduling algorithm. In this test we will likely choose L=500.
 
 Upon execution, it should obtain the ciphertext from stdin, and finally return the output plaintext on stdout within x minutes (or else it will be declared to default to an incorrect guess); most likely, we will choose x = 1 on test 1 and x = 3 on test 2.
+
+[Go back up](#project-description)
+
