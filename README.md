@@ -66,11 +66,11 @@ Upon execution, it should obtain the ciphertext from stdin, and finally return t
 - Test 1:
 1. Encryption Method: Dayan 
 
-2a. Frequency Analysis on the ciphertext and keeping count of numbers that occur 9,10,16 times as per present plaintexts: Michael
+2. Frequency Analysis on the ciphertext and keeping count of numbers that occur 9,10,16 times as per present plaintexts: Michael
 
-2b. Finding locations of these numbers(from part 2a) in the ciphertext: Marc
+3. Finding locations of these numbers(from part 2a) in the ciphertext: Marc
 
-3a. Frequency table for plaintext: Nimisha
+4. Frequency table for plaintext: Nimisha
 
-3b. Location of the characters whose average frequency(given in the problem statement) is 1: Nimisha
+5. Location of the characters whose average frequency(given in the problem statement) is 1: Nimisha
 
