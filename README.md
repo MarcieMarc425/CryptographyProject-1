@@ -68,7 +68,7 @@ Upon execution, it should obtain the ciphertext from stdin, and finally return t
 
 2. Frequency Analysis on the ciphertext and keeping count of numbers that occur 9,10,16 times as per present plaintexts: Michael
 
-3. Finding locations of these numbers(from part 2a) in the ciphertext: Marc
+3. Finding locations of these numbers(from part 2) in the ciphertext: Marc
 
 4. Frequency table for plaintext: Nimisha
 
