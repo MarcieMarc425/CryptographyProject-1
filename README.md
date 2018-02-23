@@ -60,3 +60,13 @@ In the first test, the program will be run many times, each time on a new cipher
 In the second test, the program will be run a few times, each time on a new ciphertext, computed using a plaintext obtained as a space-separate sequence of words that are randomly chosen from a subset of the set of all English words (specifically, a few words taken from the attachment english_words.txt at the top of this page, to be published soon) and the above encryption scheme, with a different scheduling algorithm. In this test we will likely choose L=500.
 
 Upon execution, it should obtain the ciphertext from stdin, and finally return the output plaintext on stdout within x minutes (or else it will be declared to default to an incorrect guess); most likely, we will choose x = 1 on test 1 and x = 3 on test 2.
+
+
+## Work has been distributed as follows:
+- Test 1:
+1. Encryption Method: Dayan 
+2a. Frequency Analysis on the ciphertext and keeping count of numbers that occur 9,10,16 times as per present plaintexts: Michael
+2b. Finding locations of these numbers(from part 2a) in the ciphertext: Marc
+3a. Frequency table for plaintext: Nimisha
+3b. Location of the characters whose average frequency(given in the problem statement) is 1: Nimisha
+
