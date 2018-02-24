@@ -1,10 +1,7 @@
 /*
 	Cryptography Project 1 Test 1 Solution
 	Date Due: March 10
-	Authors: Dayan Siddiqui
-	         Nimisha Limaye
-			 Marc Tse
-			 Michael Zhou
+	Authors: Dayan Siddiqui, Nimisha Limaye, Marc Tse, Michael Zhou
 */
 
 #include <fstream>
