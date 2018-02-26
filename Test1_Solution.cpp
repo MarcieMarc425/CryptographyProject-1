@@ -10,14 +10,14 @@
 #include <vector>
 using namespace std;
 
-// Method for reading plaintext file and writing char info to vectors of vectors
+// Function for reading plaintext file and writing char info to vectors of vectors
 // vec[x] contain the characters for each candidate text (space, a-z)
 // vec[x][y] contain the info of chars for each candidate text (occurrences, positions)
 // vec[char_num+27j] to access the characters of candidate text j (from j = 0)
 // vec[char_num+27j][0] = # of occurrences of the character in candidate text j
 // vec[char_num+27j][n] = positions of occurrences where 0 < n < vec[].size()
 //
-void readPlaintext(ifstream& ifs, vector<vector<int>>& vec) {
+void readPlaintext(const ifstream& ifs, vector<vector<int>>& vec) {
 	string candidate;
 	int i = 0;
 	int j = 0;
@@ -46,15 +46,13 @@ void readPlaintext(ifstream& ifs, vector<vector<int>>& vec) {
 
 int main() {
 
+	// Read plaintext and write frequency table to vector candidate_text
 	ifstream ifs("test1_candidate_5_plaintexts.txt");
-
 	if (!ifs) {
 		cerr << "Could not open file. \n";
 		exit(1);
 	}
-
 	vector<vector<int>> candidate_text(135);
-
 	readPlaintext(ifs, candidate_text);
 
 	// TEST CASE: Find occurrences and positions of 'b' in all candidate texts
