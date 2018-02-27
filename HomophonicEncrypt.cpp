@@ -1,8 +1,19 @@
 #include <iostream>
+#include <iterator>
 #include <vector>
 #include <cstdlib>
+#include <fstream>
 
 using namespace std;
+
+int writeToFile(const vector<int>& cyphText) {
+	ofstream outFile("cypherText.txt");
+	if (!outFile) return 0; // if failed
+	for (const auto &e : cyphText) outFile << e << ", ";
+	outFile << "\n";
+	outFile.close();
+	return 1; //if succeeded
+}
 
 //table holding letter, frequency, and key vals for cypher. just initialize; constructor handles everything
 struct CyphTable {
