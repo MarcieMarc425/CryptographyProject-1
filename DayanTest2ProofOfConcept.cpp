@@ -88,7 +88,7 @@ void plainBigramFreq( string& plainText, vector<float>& plainBigramFreqs, vector
 	}
 
 	//turns absolute freqs to fractional
-	/*
+	
 	float sum = 0;
 	for (float e : plainBigramFreqs) {
 		sum = sum + e;
@@ -97,7 +97,7 @@ void plainBigramFreq( string& plainText, vector<float>& plainBigramFreqs, vector
 	for (int i = 0; i < plainBigramFreqs.size(); i++) {
 		plainBigramFreqs[i] = plainBigramFreqs[i] / sum;
 	}
-	*/
+	
 }
 
 //alters absolute frequency of bigrams in plainspace to expected fractional frequency of bigrams in the cypher space
@@ -114,6 +114,7 @@ void augmentPlainBiFreqDist(vector<float>& plainBigramFreqs,const vector<string>
 	}
 
 	//turns absolute freq to fractional freq
+	/*
 	float sum = 0;
 	for (float e : plainBigramFreqs) {
 		sum = sum + e;
@@ -122,6 +123,7 @@ void augmentPlainBiFreqDist(vector<float>& plainBigramFreqs,const vector<string>
 	for (int i = 0; i < plainBigramFreqs.size(); i++) {
 		plainBigramFreqs[i] = plainBigramFreqs[i] / sum;
 	}
+	*/
 }
 //old code starts
 
@@ -196,14 +198,22 @@ int main() {
 
 	ofstream ofh("test2.txt");
 
+	ofh << plainText << endl;
+
+	for (int e : cypherText) {
+		ofh << e << " ";
+	}
+
+	ofh << endl << endl;
+
 	for (int i = plainBigramFreqs.size() - 1; i > -1; i--) {
-		ofh << plainBigrams[i][0] << "," << plainBigrams[i][1] << ": " << plainBigramFreqs[i] << ",\t";
+		ofh << plainBigrams[i][0] << "," << plainBigrams[i][1] << ": " << plainBigramFreqs[i] << ",\t\t";
 	}
 
 	ofh << endl << endl;
 
 	for (int i = cyphBigramFreqs.size() - 1; i > -1; i--) {
-		ofh << cyphBigrams[i] << ": " << cyphBigramFreqs[i] << ",\t";
+		ofh << cyphBigrams[i] << ": " << cyphBigramFreqs[i] << ",\t\t";
 	}
 
 	ofh << endl << endl << endl;
