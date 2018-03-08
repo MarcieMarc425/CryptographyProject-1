@@ -2,6 +2,29 @@
 	Cryptography Project 1 Test 1 Solution
 	Date Due: March 10
 	Authors: Dayan Siddiqui, Nimisha Limaye, Marc Tse, Michael Zhou
+	
+	CHANGELOG:
+	Fixed a bunch of signed/unsigned errors
+	Consolidated data structures (use vectors for C++ instead of array for C)
+	Copy control (too many vectors and arrays created in functions)
+	Added documentation for functions
+	Optimized time complexity*
+	
+	*I merged the freq_anal and partial plain_cipher_cmp into freq_analysis because there are way too many loops.
+	 The data structure for freq (vector<int>) is changed to vector<vector<int> so that finding occurrences
+	 	and tracking positions can all be done in one loop.
+	 Because plaintext occurrence is also in vector<vector<int>> format, == method can be used (no more if's YAY! Also O(n).)
+	 
+	 Encryption from Nimisha is used (and remained unchanged from her implementation) because it works. 
+	 Dayan's encryption can't seem to function when I tried it (the cipher numbers in output.txt 
+	 	remain the same regardless of how many times I ran the code)
+		
+	TO TEST:
+	Just copy the number generated from encryption (or your own number) to the insert cipher and it will run.
+	
+	TODO:
+	Merge test 1 solution with test 2 solution
+	Distinguish test 1 use from test 2 use (since the same program will be used for both tests)
 */
 
 #include <fstream>
