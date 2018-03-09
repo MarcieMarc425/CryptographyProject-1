@@ -73,6 +73,7 @@ void plainBigramFreq( string& plainText, vector<float>& plainBigramFreqs, vector
 	for (int i = 0; i < plainText.size() - 1; i++) {
 		string bi = plainText.substr(i, 2); //plainText[i] + plainText[i + 1];
 		int pres = 0;
+		//if (&plainText[i] == " " || &plainText[i + 1] == " ") pres = 1;
 		for (int j = 0; j < plainBigrams.size(); j++) {
 			if (bi == plainBigrams[j]) {
 				plainBigramFreqs[j]++;
@@ -125,6 +126,7 @@ void augmentPlainBiFreqDist(vector<float>& plainBigramFreqs,const vector<string>
 	}
 	*/
 }
+
 //old code starts
 
 struct CyphTable {
@@ -155,10 +157,12 @@ void encypher(const string& plainText, const CyphTable& ct, vector<int>& cyphert
 	}
 	for (int i = 0; i < plainText.size(); i++) {
 		int let = enumChars(plainText[i]);
+		 // round robin assignment
 		cyphertext.push_back(keys[let][letIter[let]]);
 		letIter[let]++;
 		letIter[let] = letIter[let] % keys[let].size();
-		//cyphertext.push_back(keys[let][rand() % keys[let].size()]);
+		
+		//cyphertext.push_back(keys[let][rand() % keys[let].size()]); // random assignment
 	}
 }
 
@@ -166,17 +170,20 @@ void encypher(const string& plainText, const CyphTable& ct, vector<int>& cyphert
 
 int main() {
 	vector<string> plainSpace = {"stovepipes", "nested", "gibbousness", "cottoned", "hope", "energize", "dextrins", "travestied", "jeopardous", "nymphal", "finale", "brisking", "expatiations", "meaningless", "sampling", "freelancing", "swells", "maturates", "violators", "rankly"};
-	string plainText;//" stovepipes nested gibbousness cottoned hope energize dextrins travestied jeopardous nymphal finale brisking expatiations meaningless sampling freelancing swells maturates violators rankly ";
+	string plainText = " stovepipes nested gibbousness cottoned hope energize dextrins travestied jeopardous nymphal finale brisking expatiations meaningless sampling freelancing swells maturates violators rankly ";
+	
+	string plainText1;
 	
 	int seed;
-	for (int i = 0; i < 500; i++) {
+	for (int i = 0; i < 50; i++) {
 		seed = rand() % plainSpace.size();
-		plainText = plainText + " ";
-		plainText.append(plainSpace[seed]);
+		plainText1 = plainText1 + " ";
+		plainText1.append(plainSpace[seed]);
 	}
+
 	vector<int> cypherText = {};
 	CyphTable ct;
-	encypher(plainText, ct, cypherText);
+	encypher(plainText1, ct, cypherText);
 	
 	vector<float> plainBigramFreqs = {};
 	vector<float> cyphBigramFreqs = {};
@@ -198,7 +205,7 @@ int main() {
 
 	ofstream ofh("test2.txt");
 
-	ofh << plainText << endl;
+	ofh << plainText1 << endl;
 
 	for (int e : cypherText) {
 		ofh << e << " ";
