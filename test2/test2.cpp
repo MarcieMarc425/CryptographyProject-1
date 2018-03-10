@@ -24,8 +24,8 @@ void find_and_replace_old(string& source, string const& find, string const& repl
 }
 
 vector<string> test2(vector<string> ciphertext_vc_copy){
-	string temp_val[150];
-	string temp_char[150];
+	string temp_val[146];
+	string temp_char[146];
 	vector<string> ciphertext;
 	ciphertext = ciphertext_vc_copy;
 	string characters[] = {" ","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
@@ -646,7 +646,7 @@ vector<string> test2(vector<string> ciphertext_vc_copy){
 		
 		for(int i = 0; i < ciphertext_vc_copy.size();i++){
 			if(flag == true){
-				for (int j = 64; j<150; j++){
+				for (int j = 64; j<146; j++){
 					find_and_replace(ciphertext[i], temp_val[j], temp_char[j]);
 				}
 			}
